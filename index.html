@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl" x-data="{ mobileMenu: false }" class="scroll-smooth">
+<html lang="pl" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,10 +19,24 @@
       rel="stylesheet"
     />
     <!-- Tailwind CSS CDN -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.13/dist/tailwind.min.css"
-    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#FFD700',
+              dark: '#0F0F0F',
+              graphite: '#1A1A1A',
+            },
+            fontFamily: {
+              sans: ['Roboto', 'sans-serif'],
+              display: ['Montserrat', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
     <!-- Alpine.js -->
     <script
       defer
@@ -74,7 +88,7 @@
       };
     -->
   </head>
-  <body class="bg-[#0F0F0F] text-gray-100">
+  <body class="bg-[#0F0F0F] text-gray-100" x-data="{ mobileMenu: false }">
     <!-- Header -->
     <header class="fixed top-0 inset-x-0 z-50 bg-[#0F0F0F]/90 backdrop-blur border-b border-white/5">
       <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
